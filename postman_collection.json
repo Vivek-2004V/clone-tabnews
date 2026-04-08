@@ -1,0 +1,398 @@
+{
+  "info": {
+    "name": "Clone TabNews API Collection",
+    "description": "Postman collection for testing Clone TabNews API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "Create User (Get API Key)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"john_dev\",\n  \"email\": \"john@example.com\",\n  \"full_name\": \"John Developer\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/users",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "users"]
+            }
+          }
+        },
+        {
+          "name": "Get All Users",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:3000/api/users",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "users"]
+            }
+          }
+        },
+        {
+          "name": "Get User Profile",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:3000/api/users?id=1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "users"],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Feed/Posts",
+      "item": [
+        {
+          "name": "Create Post",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Getting Started with Next.js\",\n  \"content\": \"A comprehensive guide to building web applications with Next.js...\",\n  \"author_id\": 1,\n  \"category\": \"web-development\",\n  \"tags\": \"javascript, react, nextjs\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/feed",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "feed"]
+            }
+          }
+        },
+        {
+          "name": "Get All Posts",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:3000/api/feed",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "feed"]
+            }
+          }
+        },
+        {
+          "name": "Get Posts by Category (Trending)",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:3000/api/feed?category=web-development&sort=trending",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "feed"],
+              "query": [
+                {
+                  "key": "category",
+                  "value": "web-development"
+                },
+                {
+                  "key": "sort",
+                  "value": "trending"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Single Post",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:3000/api/feed?id=1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "feed"],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Update Post",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Updated Title\",\n  \"content\": \"Updated content...\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/feed?id=1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "feed"],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Delete Post",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "http://localhost:3000/api/feed?id=1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "feed"],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Comments",
+      "item": [
+        {
+          "name": "Get Post Comments",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:3000/api/comments?post_id=1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "comments"],
+              "query": [
+                {
+                  "key": "post_id",
+                  "value": "1"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Add Comment",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"content\": \"Great article! Very helpful.\",\n  \"author_id\": 2,\n  \"parent_comment_id\": null\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/comments?post_id=1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "comments"],
+              "query": [
+                {
+                  "key": "post_id",
+                  "value": "1"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Upvotes",
+      "item": [
+        {
+          "name": "Upvote Post",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"post_id\": 1,\n  \"user_id\": 2\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/upvote",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "upvote"]
+            }
+          }
+        },
+        {
+          "name": "Remove Upvote",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"post_id\": 1,\n  \"user_id\": 2\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/upvote",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "upvote"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Bookmarks",
+      "item": [
+        {
+          "name": "Get User Bookmarks",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:3000/api/bookmarks?user_id=1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "bookmarks"],
+              "query": [
+                {
+                  "key": "user_id",
+                  "value": "1"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Bookmark Post",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "http://localhost:3000/api/bookmarks?user_id=1&post_id=1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "bookmarks"],
+              "query": [
+                {
+                  "key": "user_id",
+                  "value": "1"
+                },
+                {
+                  "key": "post_id",
+                  "value": "1"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Search",
+      "item": [
+        {
+          "name": "Search All",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:3000/api/search?q=react",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "search"],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "react"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Search Posts",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:3000/api/search?q=typescript&type=posts",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "search"],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "typescript"
+                },
+                {
+                  "key": "type",
+                  "value": "posts"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+
+> clone-tabnews@1.0.0 dev
+> next dev
+
+⚠ Port 3000 is in use by an unknown process, using available port 3001 instead.
+▲ Next.js 16.2.2 (Turbopack)
+- Local:         http://localhost:3001
+- Network:       http://10.0.2.64:3001
+- Environments: .env.local
+✓ Ready in 1332ms
+⚠ Turbopack's filesystem cache has been deleted because we previously detected an internal error in Turbopack. Builds or page loads may be slower as a result.
+
+ GET / 304 in 1381ms (next.js: 1354ms, application-code: 27ms)
+❌ Database Error (GET): 
+ GET /api/posts 500 in 53ms (next.js: 41ms, application-code: 12ms)
+[browser] Error fetching posts: Error: HTTP 500
+    at Home.useEffect (pages/index.js:11:28)
+   9 |     fetch("/api/posts")
+  10 |       .then(res => {
+> 11 |         if (!res.ok) throw new Error(`HTTP ${res.status}`);
+     |                            ^
+  12 |         return res.json();
+  13 |       })
+  14 |       .then(data => { (pages/index.js:19:17)
+🔍 Testing database connection...
+📍 DATABASE_URL: ✅ Set
+❌ Connection Test Error: {
+  message: '',
+  code: 'ECONNREFUSED',
+  errno: undefined,
+  severity: undefined,
+  stack: 'AggregateError: \n' +
+    '    at /workspaces/clone-tabnews/node_modules/pg-pool/index.js:45:11\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n' +
+    '    at async handler (/workspaces/clone-tabnews/.next/dev/server/chunks/[root-of-the-server]__10lt6s8._.js:64:24)\n' +
+    '    at async apiResolver (/workspaces/clone-tabnews/node_modules/next/dist/compiled/next-server/pages-api-turbo.runtime.dev.js:2:4425)\n' +
+    '    at async PagesAPIRouteModule.render (/workspaces/clone-tabnews/node_modules/next/dist/compiled/next-server/pages-api-turbo.runtime.dev.js:2:5955)\n' +
+    '    at async Module.handler (/workspaces/clone-tabnews/.next/dev/server/chunks/[root-of-the-server]__0-~k2zr._.js:2974:13)\n' +
+    '    at async DevServer.runApi (/workspaces/clone-tabnews/node_modules/next/dist/server/next-server.js:695:9)\n' +
+    '    at async NextNodeServer.handleCatchallRenderRequest (/workspaces/clone-tabnews/node_modules/next/dist/server/next-server.js:335:37)\n' +
+    '    at async DevServer.handleRequestImpl (/workspaces/clone-tabnews/node_modules/next/dist/server/base-server.js:934:17)\n' +
+    '    at async /workspaces/clone-tabnews/node_modules/next/dist/server/dev/next-dev-server.js:394:20\n' +
+    '    at async Span.traceAsyncFn (/workspaces/clone-tabnews/node_modules/next/dist/trace/trace.js:164:20)\n' +
+    '    at async DevServer.handleRequest (/workspaces/clone-tabnews/node_modules/next/dist/server/dev/next-dev-server.js:390:24)\n' +
+    '    at async invokeRender (/workspaces/clone-tabnews/node_modules/next/dist/server/lib/router-server.js:266:21)\n' +
+    '    at async handleRequest (/workspaces/clone-tabnews/node_modules/next/dist/server/lib/router-server.js:465:24)\n' +
+    '    at async requestHandlerImpl (/workspaces/clone-tabnews/node_modules/next/dist/server/lib/router-server.js:514:13)\n' +
+    '    at async Server.requestListener (/workspaces/clone-tabnews/node_modules/next/dist/server/lib/start-server.js:225:13)'
+}
+ GET /api/db-test 500 in 13ms (next.js: 6ms, application-code: 7ms)
+❌ Database Error (GET): 
+ GET /api/posts 200 in 119ms (next.js: 82ms, application-code: 37ms)
+ GET / 200 in 11ms (next.js: 3ms, application-code: 7ms)
+❌ Database Error (GET): 
+ GET /api/posts 200 in 6ms (next.js: 1537µs, application-code: 5ms)
+It looks like you're trying to use TypeScript but do not have the required package(s) installed.
+Installing dependencies
+
+If you are not trying to use TypeScript, please remove the tsconfig.json file from your package root (and any TypeScript files in your app and pages directories).
+
+
+Installing devDependencies (npm):
+- typescript
+- @types/react
+- @types/node
+
+✓ Compiled in 506ms
+✓ Compiled in 776ms
+⚠ Fast Refresh had to perform a full reload when ./pages/index.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET / 200 in 215ms (next.js: 130ms, application-code: 84ms)
+✓ Compiled in 1166ms
+⚠ Fast Refresh had to perform a full reload when [hmr-entry]/hmr-entry.js { ENTRY => "[project]/pages/index" } changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+⚠ Duplicate page detected. pages/index.tsx and pages/index.js both resolve to /index.
+⨯ Error: The default export is not a React Component in page: "/"
+    at ignore-listed frames
+⨯ Error: The default export is not a React Component in page: "/"
+    at ignore-listed frames {
+  page: '/'
+}
+✓ Compiled in 0ms
+✓ Compiled in 0ms
+ GET / 500 in 3.7s (next.js: 3.0s, application-code: 701ms)
+[browser] Uncaught Error: The default export is not a React Component in page: "/"
+
+added 5 packages, and audited 48 packages in 12s
+
+9 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+
+  We detected TypeScript in your project and created a tsconfig.json file for you.
+Persisting failed: Unable to open static sorted file referenced from 00000080.meta
+
+Caused by:
+    0: Unable to open static sorted file 00000079.sst
+    1: Failed to open SST file /workspaces/clone-tabnews/.next/dev/cache/turbopack/8d0f77bf/00000079.sst
+    2: No such file or directory (os error 2)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+✓ Compiled in 83ms
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
